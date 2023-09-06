@@ -1,0 +1,11 @@
+name: chatSocketServer-spigot
+version: '${project.version}'
+main: com.chatsocketserverspigot.ChatSocketServer_spigot
+api-version: '1.16'
+authors:
+  - Twiyin0
+description: "一个基于socket服务的聊天发射器"
+commands:
+  chatSocketServer:
+    description: "socket聊天发射器主命令"
+    permission: chatSocketServer.admin

@@ -1,0 +1,2 @@
+# chatSocketServer
+一个用简单socket通信实现聊天发射器的mc插件
