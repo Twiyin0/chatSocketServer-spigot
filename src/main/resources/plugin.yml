@@ -9,3 +9,5 @@ commands:
   chatSocketServer:
     description: "socket聊天发射器主命令"
     permission: chatSocketServer.admin
+depend:
+  - PlaceholderAPI

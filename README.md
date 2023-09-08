@@ -20,6 +20,12 @@
 * 接收玩家聊天消息
 * 接收玩家死亡消息
 
+### v1.0.1
+* 加入papi, 请各位使用v1.0.1的用户在服务器添加`PlaceholderAPI`前置插件
+* 使用命令`/papi ecloud download Server`与`/papi ecloud download Player`补全papi变量
+* 当socket接收到tps(TPS)返回服务器的tps
+* 当socket接收到服务器信息(server_info)返回服务器一些基本信息
+
 ## 写在最后
 第一次写java还有很多不足，大佬轻喷。  
 本人不打算长期维护该插件，毕竟我不是主修java的
