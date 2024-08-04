@@ -38,6 +38,9 @@ public final class ChatSocketServer_spigot extends JavaPlugin implements Listene
             config = YamlConfiguration.loadConfiguration(configFile);
             config.set("host", "0.0.0.0");
             config.set("port", 21354);
+            config.set("token", "Token12345");
+            config.set("CMDprefix", "[socketReceived] >> ");
+            config.set("CHATprefix", "§6[Socket消息]§r");
             saveConfig();
         } else {
             // 配置文件存在，加载它
@@ -47,12 +50,16 @@ public final class ChatSocketServer_spigot extends JavaPlugin implements Listene
         // 初始化 socketHandler
         String sockethost =config.getString("host");
         int socketPort = config.getInt("port");
-        socketHandler = new SocketHandler(sockethost, socketPort); // 指定主机和端口
+        String token = config.getString("token");
+        socketHandler = new SocketHandler(sockethost, socketPort, token); // 指定主机和端口与token
+        String receivedCMDPrefix = config.getString("CMDprefix");
+        String receivedCHATPrefix = config.getString("CHATprefix");
+
         socketHandler.acceptConnection();
         // 设置消息监听器
         socketHandler.setClientMessageListener(message -> {
             // 在这里处理接收到的消息
-            getLogger().info("[socketReceived]>> " + message);
+            getLogger().info(receivedCMDPrefix + message);
             if (message.equals("TPSn\n") || message.equals("tps\n")) {
                 // 使用异步任务发送聊天消息到Socket服务器
                 String papivar = "%server_tps%";
@@ -94,7 +101,7 @@ public final class ChatSocketServer_spigot extends JavaPlugin implements Listene
             else {
                 String papivar = PlaceholderAPI.setPlaceholders(null, message);
                 // 可以将消息广播给服务器内的玩家
-                getServer().broadcastMessage("§6[Socket消息]§r\n" + papivar);
+                getServer().broadcastMessage(receivedCHATPrefix + '\n' + papivar);
             }
         });
         // 启动监听客户端连接的线程
