@@ -1,8 +1,8 @@
 # chatSocketServer
 一个用简单socket通信实现聊天发射器的mc插件  
 版本支持  
-**Bukkit**
-`paper`&&`spigot`: 1.16~1.20(据说1.21也能用，没试过)
+**Bukkit**  
+`paper`&&`spigot`: 1.16~1.20  (据说1.21也能用，没试过)
 
 ## 安装
 * 1、在[release]中下载最新版本的jar文件
