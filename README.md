@@ -1,3 +1,4 @@
+由于本人并不精通java，编程能力也不是很强，本插件停止更新，可以支持[鹊桥](https://github.com/17TheWord/QueQiao)，使用Websocket协议进行互通，比本插件更完善且安全
 # chatSocketServer
 一个用简单socket通信实现聊天发射器的mc插件  
 版本支持  
